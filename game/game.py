@@ -2,11 +2,11 @@ import json
 import requests
 import sys
 
-from endGame import *
-from errors import *
-from hiddenWord import *
-from printBoxes import *
-from wordCheck import validWord
+from game.endGame import *
+from game.errors import *
+from game.hiddenWord import *
+from game.printBoxes import *
+from game.wordCheck import validWord
 
 def endQuestion():
     str = "Enter 'exit' to quit or 'continue' to play again"
@@ -36,7 +36,7 @@ def gameLoop(word):
         if (userGuess == word):
             win()
             endQuestion()
-        elif(guess == 10):
+        elif(guess > 10):
             lose(word)
             endQuestion()
 
